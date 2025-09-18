@@ -1,0 +1,329 @@
+/* Reset & base styles */
+
+* {  /*universal selector*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Logo link Marome Investments*/
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.2;
+  padding: 10px 20px;
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  text-decoration: none; /* Removes underline from <a> */
+}
+
+/* Style for "Investments" */
+.logo br + span {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #005555;
+  display: block;
+}
+
+/* Header / Navbar */
+header {
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+/*Spacing elements evenly*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Footer */
+footer {
+  background: black;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+body {
+  background-image: url('images/home-image.avif');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Optional: Keeps the background fixed when scrolling */
+}
+
+/* Services page background */
+body.services {
+  background-image: url('images/services-background.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgb(255, 251, 251); /* semi-transparent black */
+  background-blend-mode: white; /* blends color with image */
+}
+
+/* About us background */
+body.about {
+  background-image: url('images/about-background.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgb(255, 251, 251); /* semi-transparent black */
+  background-blend-mode: white; /* blends color with image */
+}
+
+/* Inquiry page background */
+body.inquiry {
+  background-image: url('images/inquiry-background.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgb(255, 251, 251); /* semi-transparent black */
+  background-blend-mode: white; /* blends color with image */
+}
+
+/* Inquiry page background */
+body.contact {
+  background-image: url('images/contact-background.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgb(255, 251, 251); /* semi-transparent black */
+  background-blend-mode: white; /* blends color with image */
+}
+
+main {
+  flex: 1;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+
+/* Special styling for the button link */
+nav ul li a.btn-link {
+  background-color: #007BFF; /* Blue */
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-top: 1.5rem;
+}
+
+/* Hover effect */
+nav ul li a.btn-link:hover {
+  background-color: #0056b3; /* Darker blue */
+  /*optional transform: scale*/ /* Slight zoom */
+}
+
+/* Style for button in main content */
+.main-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007BFF; /* Same as header button */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  background-color: #0056b3;
+  /*optional transform: scale*/
+}
+
+.main-btn2 {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: rgb(181, 131, 39); /* Same as header button */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.main-btn2:hover {
+  background-color: rgb(169, 67, 0);
+  
+}
+
+.mySubmit{
+  cursor: pointer;
+}
+
+.icon {
+  fill: white;
+  transition: fill 0.3s ease;
+  cursor: pointer;
+}
+.icon.linkedin:hover {
+  fill: #0A66C2; /* LinkedIn Blue */
+}
+
+/* Apply fade + slide-in animation to the main content */
+main, .container {
+  opacity: 0;
+  transform: translateY(20px); /* start slightly lower */
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+/* Keyframes for the animation */
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* Responsive Design */
+/* ============================= */
+
+/* Tablets (max width 992px) */
+@media (max-width: 992px) {
+  nav ul {
+    gap: 1rem; /* reduce spacing */
+  }
+
+  .logo {
+    font-size: 2rem; /* slightly smaller logo */
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Mobile (max width 768px) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    display: block;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .container h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .container p {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Very Small Screens (max width 480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+  }
+
+  .container p {
+    font-size: 0.9rem;
+  }
+
+  nav ul li a.btn-link {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
