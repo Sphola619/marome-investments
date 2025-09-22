@@ -27,3 +27,30 @@ inquiryForm.addEventListener("submit", function (event) {
     emailInput.focus();
   }
 });
+
+// Redirect to thankyou.html file 
+
+// Wait until the page is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const emailInput = document.getElementById("email");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Stop normal form submission for now
+
+    const email = emailInput.value.trim();
+
+    // Regex for email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+
+    if (!emailPattern.test(email)) {
+      alert("⚠️ Please enter a valid email address with a proper domain (e.g., name@example.com).");
+      return;
+    }
+
+    // If email is valid, redirect to thankyou.html
+    // Here you could also save the name/project details in localStorage 
+    // if you want to personalize the thank you page
+    window.location.href = "thankyou.html";
+  });
+});
