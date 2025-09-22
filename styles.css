@@ -397,3 +397,15 @@ main, .container {
   background-color: rgb(94, 94, 206);
   color: white;
 }
+
+/* Style for Project Details textarea */
+#project {
+  width: 100%;    /* prevents it from stretching too wide */
+  height: 180px;        /* bigger height */
+  padding: 10px;        /* adds inner spacing for readability */
+  font-size: 1rem;      /* slightly larger text */
+  border: 1px solid;
+  border-radius: 8px;
+  resize: diagonal;     /* user can resize vertically but not horizontally */
+  max-width: 1000px;
+}
