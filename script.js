@@ -46,20 +46,60 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ========================
-  // 2. Hamburger Menu Toggle (Updated)
-  // ========================
-  const hamburger = document.querySelector(".hamburger"); // safer selector
-  const nav = document.querySelector("nav");
+  // ==========================
+  // 2. Counter Animation
+  // ==========================
+  const counters = document.querySelectorAll(".counter");
+  const speed = 100;
 
-  if (hamburger && nav) {
-    const navLinks = nav.querySelector("ul"); // always find the <ul> inside this nav
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText.replace("+", "");
+      const increment = Math.ceil(target / speed);
 
-    hamburger.addEventListener("click", () => {
-      if (navLinks) {
-        navLinks.classList.toggle("active"); // show/hide menu
+      if (count < target) {
+        counter.innerText = `${count + increment}+`;
+        setTimeout(updateCount, 40);
+      } else {
+        counter.innerText = `${target}+`;
       }
-      hamburger.classList.toggle("active"); // animate hamburger to X
+    };
+    updateCount();
+  });
+
+  // ==========================
+  // 3. Hamburger Menu Toggle
+  // ==========================
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector("nav ul");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove("active");
+        menuToggle.classList.remove("active");
+      }
     });
   }
+
+  // ==========================
+  // 4. Highlight Active Page Link
+  // ==========================
+  const currentPage = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll("nav ul li a.link");
+
+  links.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
 });
