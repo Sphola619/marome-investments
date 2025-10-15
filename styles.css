@@ -422,3 +422,34 @@ nav ul li a.link.active {
     padding: 1rem 0.5rem;
   }
 }
+
+/* WhatsApp Floating Icon */
+.whatsapp-float {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #25D366;
+  border-radius: 10px; /* curved square */
+  width: 50px;
+  height: 50px;
+  display: flex; /* center contents */
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float svg {
+  fill: white;
+  width: 28px;
+  height: 28px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
