@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -30,17 +34,17 @@ body {
   display: inline-block;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   text-decoration: none;
-  text-align: left; /* keep Marome on the left */
+  text-align: left;
 }
 
 .logo br + span {
   font-size: 1.2rem;
   font-weight: 400;
-  color: #005555; /* keep your original color */
+  color: #005555;
   display: block;
-  text-align: center; /* center Investments under Marome */
-  width: 100%; /* ensure it spans the width of Marome */
-  margin-top: -5px; /* optional: adjust spacing */
+  text-align: center;
+  width: 100%;
+  margin-top: -5px;
 }
 
 /* ============================= */
@@ -54,7 +58,7 @@ header {
 
 nav {
   display: flex;
-  justify-content: space-between; /* logo left, links right */
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
@@ -79,7 +83,6 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
-/* Button-style nav links */
 nav ul li a.btn-link {
   background-color: #007BFF;
   color: white;
@@ -96,7 +99,7 @@ nav ul li a.btn-link:hover {
 /* Hamburger Menu (Mobile) */
 /* ============================= */
 .menu-toggle {
-  display: none; /* hidden on desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -140,7 +143,6 @@ main {
   margin-bottom: 1.5rem;
 }
 
-/* Buttons in main content */
 .main-btn, .main-btn2 {
   display: inline-block;
   margin-top: 1rem;
@@ -166,6 +168,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
+  font-size: 0.9rem; /* Adjusted for mobile */
 }
 
 .icon.linkedin {
@@ -329,50 +332,61 @@ nav ul li a.link.active {
   letter-spacing: 1px;
 }
 
-/* Director Section */
-.director-section {
-  margin: 3rem 0;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
+/* ============================= */
+/* Clients Section - Fixed and Responsive */
+/* ============================= */
+#clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.director-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
+#clients h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
   color: #333;
 }
 
-.director-card {
+.client-logos {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, white 10%, white 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, white 10%, white 90%, transparent 100%);
+}
+
+.client-logos-inner {
   display: flex;
-  gap: 2rem;
+  gap: 120px;
   align-items: center;
-  flex-wrap: wrap;
+  width: 200%;
+  animation: scroll 20s linear infinite;
 }
 
-.director-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+.client-logos .client-icon {
+  height: 80px;
+  width: auto;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.director-info h3 {
-  color: #0047AB;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+.client-logos .client-icon:hover {
+  transform: scale(1.1);
 }
 
-.director-info p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ============================= */
 /* Mobile Styles */
+/* ============================= */
 @media (max-width: 768px) {
-
   .logo {
     text-align: center;
     font-size: 1.8rem;
@@ -382,7 +396,6 @@ nav ul li a.link.active {
     font-size: 1rem;
   }
 
-  /* Hamburger visible */
   .menu-toggle {
     display: flex;
     position: absolute;
@@ -390,7 +403,6 @@ nav ul li a.link.active {
     right: 20px;
   }
 
-  /* Mobile nav */
   nav ul {
     flex-direction: column;
     position: fixed;
@@ -421,21 +433,42 @@ nav ul li a.link.active {
     font-size: 0.9rem;
     padding: 1rem 0.5rem;
   }
+
+  #clients {
+    padding: 40px 15px;
+  }
+
+  #clients h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    margin-left: -580px; /* Adjust this value to move it further left */
+  }
+
+  .client-logos-inner {
+    gap: 80px;
+    animation: scroll 25s linear infinite;
+  }
+
+  .client-logos .client-icon {
+    height: 60px;
+  }
 }
 
+/* ============================= */
 /* WhatsApp Floating Icon */
+/* ============================= */
 .whatsapp-float {
   position: fixed;
   bottom: 90px;
   left: 20px;
   z-index: 1000;
   background-color: #25D366;
-  border-radius: 10px; /* curved square */
+  border-radius: 10px;
   width: 50px;
   height: 50px;
-  display: flex; /* center contents */
-  align-items: center; /* vertical center */
-  justify-content: center; /* horizontal center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -451,5 +484,7 @@ nav ul li a.link.active {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-
-
+/* Mobile-specific h2 */
+.mobile-h2 {
+  display: none; /* Hide by default */
+}
