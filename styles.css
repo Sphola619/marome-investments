@@ -202,9 +202,10 @@ body.home, body.services, body.about, body.inquiry, body.contact {
 /* 7. Cards / Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr; /* 👈 Forces one column only */
   gap: 2rem;
-  margin-top: 2rem;
+  max-width: 800px;
+  margin: 0 auto; /* centers the column */
 }
 
 .card {
@@ -216,6 +217,7 @@ body.home, body.services, body.about, body.inquiry, body.contact {
   transition: transform 0.3s ease;
   padding: 20px;
   cursor: pointer;
+  min-height: 400px;
 }
 
 .card:hover { transform: translateY(-5px); }
@@ -226,8 +228,13 @@ body.home, body.services, body.about, body.inquiry, body.contact {
   object-fit: cover;
 }
 
-.card h3 { margin: 1rem 0 0.5rem; color: #333; }
-.card p { padding: 0 1rem; color: #666; }
+.card h3 { 
+  margin: 1rem 0 0.5rem; color: #333; 
+}
+
+.card p { 
+  padding: 0 1rem; color: #666; 
+}
 
 .btn-card {
   display: inline-block;
@@ -238,9 +245,13 @@ body.home, body.services, body.about, body.inquiry, body.contact {
   border-radius: 5px;
   text-decoration: none;
   transition: 0.3s;
+  cursor: pointer;
+  font-weight: 500;
 }
 
-.btn-card:hover { background: #0056b3; }
+.btn-card:hover {
+  background: #0056b3;
+}
 
 /* ============================= */
 /* 8. Form / Textarea Styles */
@@ -487,4 +498,17 @@ nav ul li a.link.active {
 /* Mobile-specific h2 */
 .mobile-h2 {
   display: none; /* Hide by default */
+}
+
+/* ============================= */
+/* Service Images */
+/* ============================= */
+
+.service-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }

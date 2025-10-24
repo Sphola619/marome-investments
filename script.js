@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ========================
+  
   // 1. Form Submission Handling
-  // ========================
+  
   const inquiryForm = document.querySelector("form");
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
+  
   // 2. Counter Animation
-  // ==========================
+  
   const counters = document.querySelectorAll(".counter");
   const speed = 100;
 
@@ -68,9 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCount();
   });
 
-  // ==========================
+  
   // 3. Hamburger Menu Toggle
-  // ==========================
+  
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.querySelector("nav ul");
 
@@ -88,18 +88,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
-  // 4. Highlight Active Page Link
-  // ==========================
-  const currentPage = window.location.pathname.split("/").pop();
-  const links = document.querySelectorAll("nav ul li a.link");
+  
+// 4. Highlight Active Page Link (with subpage support)
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll("nav ul li a.link");
 
-  links.forEach(link => {
-    const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+
+  // All subpages related to "Services"
+  const servicePages = [
+    "backend-development.html",
+    "integration.html",
+    "infrastructure.html",
+    "design.html",
+    "architecture.html",
+    "deployment.html",
+    "security.html"
+  ];
+
+  if (
+    linkPage === currentPage ||
+    (linkPage === "services.html" && servicePages.includes(currentPage))
+  ) {
+    link.classList.add("active");
+  } else {
+    link.classList.remove("active");
+  }
+});
+
 });
