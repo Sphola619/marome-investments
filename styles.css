@@ -512,3 +512,16 @@ nav ul li a.link.active {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
+/* ============================= */
+/* Director Image */
+/* ============================= */
+
+.director-photo {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
