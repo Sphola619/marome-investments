@@ -117,4 +117,57 @@ links.forEach(link => {
   }
 });
 
+// 5. Infinite Carousel - Smooth no-reset version
+const initInfiniteCarousel = () => {
+  const track = document.querySelector('.client-logos-inner');
+  if (!track) return;
+
+  // Duplicate the logos for seamless infinite scroll
+  const slides = track.innerHTML;
+  track.innerHTML += slides;
+
+  let position = 0;
+  const speed = 1; // pixels per frame - adjust this for speed (0.5 = slower, 2 = faster)
+  const logosPerSet = 11;
+  const gap = 120; // Match your CSS gap
+  let setWidth = 0;
+  
+  // Calculate set width once images are loaded
+  const calculateSetWidth = () => {
+    const firstLogo = track.querySelector('.client-icon');
+    if (firstLogo && firstLogo.offsetWidth > 0) {
+      const logoWidth = firstLogo.offsetWidth;
+      setWidth = (logoWidth * logosPerSet) + (gap * (logosPerSet - 1));
+      startAnimation();
+    } else {
+      // Retry if images aren't loaded yet
+      setTimeout(calculateSetWidth, 100);
+    }
+  };
+  
+  function animate() {
+    position -= speed;
+    
+    // Reset position when we've scrolled one full set
+    if (Math.abs(position) >= setWidth) {
+      position = 0;
+    }
+    
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
+  }
+  
+  function startAnimation() {
+    if (setWidth > 0) {
+      animate();
+    }
+  }
+  
+  // Start the process
+  calculateSetWidth();
+};
+
+// Call the function to initialize the carousel
+initInfiniteCarousel();
+
 });
