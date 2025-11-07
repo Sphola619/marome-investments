@@ -83,3 +83,4 @@ LinkedIn Profile:https://www.linkedin.com/in/sipho-sisusa-a16400219/
 ## 🧾 License
   
 All rights reserved © 2025 Marome Investments.
+This project is proprietary and not open for redistribution or reuse.
