@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160">
+  <defs>
+    <linearGradient id="mGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#F5D78E"/>
+      <stop offset="50%"  stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#C9A84C" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#F5D78E"/>
+      <stop offset="70%"  stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- M shape — matches favicon design -->
+  <polyline
+    points="15,78 15,15 47,48 60,28 73,8 105,44 105,78"
+    fill="none"
+    stroke="url(#mGrad)"
+    stroke-width="9"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- MAROME -->
+  <text
+    x="60" y="100"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-weight="700"
+    font-size="13"
+    fill="white"
+    text-anchor="middle"
+    letter-spacing="4">MAROME</text>
+
+  <!-- Gold divider line -->
+  <line x1="8" y1="108" x2="112" y2="108" stroke="#C9A84C" stroke-width="1.5"/>
+
+  <!-- INVESTMENTS -->
+  <text
+    x="60" y="121"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-weight="400"
+    font-size="9.5"
+    fill="#C9A84C"
+    text-anchor="middle"
+    letter-spacing="2.5">INVESTMENTS</text>
+
+  <!-- & TECHNOLOGIES -->
+  <text
+    x="60" y="135"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-weight="400"
+    font-size="8.5"
+    fill="#C9A84C"
+    text-anchor="middle"
+    letter-spacing="2">&#38; TECHNOLOGIES</text>
+</svg>

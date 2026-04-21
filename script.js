@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // 0. Auto-update copyright year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
   
   // 1. Form Submission Handling
   
