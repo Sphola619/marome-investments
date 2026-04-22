@@ -222,6 +222,35 @@ main {
   position: relative;
 }
 
+.section-divider {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201, 168, 76, 0.7), transparent);
+}
+
+#ai-platform,
+#marketing-platform,
+#music-platform {
+  padding: 4rem 2rem;
+}
+
+#marketing-platform {
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+/* Flip card to left, text to right on marketing section */
+.marketing-flip {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .marketing-flip {
+    flex-direction: column;
+  }
+}
+
 .ai-platform-inner {
   max-width: 900px;
   margin: 0 auto;
@@ -246,6 +275,21 @@ main {
   padding: 4px 12px;
   border-radius: 20px;
   margin-bottom: 1rem;
+}
+
+.ai-badge--blue {
+  background: linear-gradient(135deg, #1a6fc4, #56a0f5);
+  color: #ffffff;
+}
+
+.ai-badge--purple {
+  background: linear-gradient(135deg, #6b21a8, #a855f7);
+  color: #ffffff;
+}
+
+#music-platform {
+  padding: 5rem 2rem;
+  position: relative;
 }
 
 .ai-platform-text h2 {
