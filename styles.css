@@ -88,15 +88,20 @@ nav ul li a:hover {
 }
 
 nav ul li a.btn-link {
-  background-color: #007BFF;
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
+  background: linear-gradient(135deg, #C9A84C, #F5D78E);
+  color: #0d0b1e;
+  border-radius: 8px;
+  font-weight: 600;
   padding: 10px 20px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 18px rgba(201, 168, 76, 0.35);
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 nav ul li a.btn-link:hover {
-  background-color: #0056b3;
+  opacity: 0.88;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201, 168, 76, 0.5);
 }
 
 
@@ -163,20 +168,39 @@ main {
 .main-btn, .main-btn2 {
   display: inline-block;
   margin-top: 1rem;
-  padding: 10px 20px;
-  font-size: 1em;
+  padding: 13px 32px;
+  font-size: 0.95em;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-.main-btn { background-color: #007BFF; }
-.main-btn:hover { background-color: #0056b3; }
+/* Project Inquiry — solid gold gradient, dark text */
+.main-btn {
+  background: linear-gradient(135deg, #C9A84C, #F5D78E);
+  color: #0d0b1e;
+  box-shadow: 0 4px 18px rgba(201, 168, 76, 0.35);
+}
+.main-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201, 168, 76, 0.5);
+}
 
-.main-btn2 { background-color: rgb(181, 131, 39); }
-.main-btn2:hover { background-color: rgb(169, 67, 0); }
+/* About our Services — ghost/outline style */
+.main-btn2 {
+  background: transparent;
+  color: #F5D78E;
+  border: 1.5px solid rgba(201, 168, 76, 0.55);
+}
+.main-btn2:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: #F5D78E;
+  transform: translateY(-2px);
+}
 
 .main-btn3 {
   background: transparent;
