@@ -20,6 +20,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 202px;
 }
 
 
@@ -56,8 +57,14 @@ body {
 
 header {
   padding: 1rem 2rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+  background: rgba(13, 11, 30, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 nav {
@@ -142,9 +149,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlideIn 0.8s ease-out forwards;
 }
 
 .container h1 {
@@ -157,12 +161,22 @@ main {
   margin-bottom: 1.25rem;
 }
 
+body.index .container h1 {
+  opacity: 0;
+  animation: fadeSlideIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
 .container p {
   font-size: 1.1rem;
   color: rgba(210, 200, 240, 0.75);
   max-width: 560px;
   margin-bottom: 1.5rem;
   line-height: 1.7;
+}
+
+body.index .container p {
+  opacity: 0;
+  animation: fadeSlideIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
 }
 
 .main-btn, .main-btn2 {
@@ -176,6 +190,12 @@ main {
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+body.index .main-btn,
+body.index .main-btn2 {
+  opacity: 0;
+  animation: fadeSlideIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
 }
 
 /* Project Inquiry — solid gold gradient, dark text */
@@ -312,6 +332,19 @@ main {
   border-radius: 12px;
   overflow: hidden;
   backdrop-filter: blur(10px);
+}
+
+.ai-platform-card--link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ai-platform-card--link:hover {
+  border-color: rgba(201, 168, 76, 0.65);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(201, 168, 76, 0.18);
 }
 
 .ai-card-header {
@@ -625,6 +658,10 @@ body.inquiry input::placeholder {
 /* 9. Animations */
 
 @keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -732,6 +769,10 @@ nav ul li a.link.active {
 /* 13. Mobile Styles */
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 147px;
+  }
+
   .logo {
     border-radius: 10px;
   }
