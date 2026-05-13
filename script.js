@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
-      const project = projectInput.value.trim();
+      const serviceInput = document.getElementById("service");
+      const servicePrefix = serviceInput ? `Service Interest: ${serviceInput.value}\n\n` : "";
+      const project = servicePrefix + projectInput.value.trim();
 
       const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -27,26 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      if (project.length < 50) {
+      if (projectInput.value.trim().length < 50) {
         alert("Please describe your project (min 50 chars).");
         return;
       }
 
-      try {
-        const response = await fetch("https://marome-backend.onrender.com/api/inquiry", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, project }),
-        });
+      const payload = JSON.stringify({ name, email, project });
 
-        if (response.ok) {
-          window.location.href = "thankyou.html";
-        } else {
-          alert("Failed to submit inquiry. Please try again.");
+      try {
+        const response = await fetch(
+          "https://api.marome-investments.co.za/api/inquiry",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: payload,
+            keepalive: true,
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Server error: ${response.status}`);
         }
+
+        window.location.href = "thankyou.html";
       } catch (error) {
         console.error("Error submitting form:", error);
-        alert("An error occurred while sending your inquiry.");
+        alert("Something went wrong submitting your inquiry. Please try again.");
       }
     });
   }
