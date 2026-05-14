@@ -2637,7 +2637,82 @@ main.contact-main {
 }
 
 /* ── Responsive ── */
-@media (max-width: 900px) {
+
+/* iPad landscape (901px – 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .nav-cta {
+    margin-right: 1.25rem;
+  }
+
+  .contact-bento-wrap {
+    padding: 0 2.5rem 6rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .contact-form-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .contact-form-h2 {
+    font-size: 1.625rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .contact-form {
+    gap: 1.5rem;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+
+  .contact-partners {
+    padding: 5rem 2.5rem;
+  }
+}
+
+/* iPad portrait & small tablets (601px – 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .contact-hero {
+    padding: 12rem 2rem 4rem;
+  }
+
+  .contact-bento-wrap {
+    padding: 0 2rem 5.5rem;
+  }
+
+  .contact-form-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-partners {
+    padding: 4.5rem 2rem;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
   .contact-hero {
     padding: 12rem 1.5rem 4rem;
   }
