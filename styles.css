@@ -141,7 +141,6 @@ nav ul li a.btn-link:hover {
   transition: opacity 0.2s ease;
   white-space: nowrap;
   margin-left: auto;
-  margin-right: 18rem;
 }
 
 .nav-cta:hover {
@@ -1648,6 +1647,138 @@ main.about-main {
   line-height: 1.7;
 }
 
+/* ---- Managing Director ---- */
+.about-md {
+  padding: 7.5rem 4rem;
+  background: #0e0e13;
+}
+
+.about-md-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.about-md-label {
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.about-md-card {
+  background: #131825;
+  border: 1px solid rgba(240, 211, 126, 0.12);
+  border-radius: 16px;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.75rem;
+}
+
+.about-md-monogram-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-md-monogram {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid #f0d37e;
+  background: rgba(240, 211, 126, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f0d37e;
+  letter-spacing: 0.05em;
+}
+
+.about-md-exp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(240, 211, 126, 0.1);
+  border: 1px solid rgba(240, 211, 126, 0.25);
+  color: #f0d37e;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+
+.about-md-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.about-md-h2 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.about-md-role {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.about-md-divider {
+  width: 48px;
+  height: 2px;
+  background: rgba(240, 211, 126, 0.4);
+  border-radius: 2px;
+}
+
+.about-md-bio {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.about-md-p {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.about-md-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.about-md-tag {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #f0d37e;
+  background: rgba(240, 211, 126, 0.08);
+  border: 1px solid rgba(240, 211, 126, 0.2);
+  padding: 5px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
 /* ---- About CTA ---- */
 .about-cta {
   padding: 8rem 2rem;
@@ -1736,6 +1867,14 @@ main.about-main {
   .about-values-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .about-md {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-md-card {
+    padding: 2.5rem 1.5rem;
   }
 
   .about-cta {
@@ -2656,10 +2795,6 @@ main.contact-main {
 
 /* iPad landscape (901px – 1200px) */
 @media (min-width: 901px) and (max-width: 1200px) {
-  .nav-cta {
-    margin-right: 1.25rem;
-  }
-
   .contact-bento-wrap {
     padding: 0 2.5rem 6rem;
   }
@@ -3897,4 +4032,492 @@ body.terms .terms-main {
   .terms-sec--liability .terms-sec-inner {
     padding: 1.75rem;
   }
+}
+
+
+/* =================================================================
+   THEME TOGGLE BUTTON
+================================================================= */
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.75);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+.theme-toggle:hover {
+  border-color: #f0d37e;
+  color: #f0d37e;
+}
+
+/* =================================================================
+   LIGHT MODE THEME  —  html[data-theme="light"]
+================================================================= */
+
+/* ── Logo in light mode ── */
+html[data-theme="light"] .logo img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* ── Global ── */
+html[data-theme="light"] body {
+  color: #1e293b;
+  background: #f4f6f8;
+}
+
+/* ── Header & Nav ── */
+html[data-theme="light"] header {
+  background: rgba(247, 249, 251, 0.97);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+html[data-theme="light"] nav ul li a {
+  color: rgba(15, 23, 42, 0.7);
+}
+html[data-theme="light"] nav ul li a:hover {
+  color: #92701a;
+}
+html[data-theme="light"] nav ul li a:not(.btn-link):not(.nav-cta)::after {
+  background: #92701a;
+}
+html[data-theme="light"] nav ul li a.link.active {
+  color: #92701a;
+}
+html[data-theme="light"] nav ul li a.link.active::after {
+  background: #92701a;
+}
+html[data-theme="light"] .menu-toggle span {
+  background-color: rgba(15, 23, 42, 0.8);
+}
+html[data-theme="light"] nav ul {
+  background-color: #f4f6f8;
+  border-left-color: rgba(146, 112, 26, 0.25);
+}
+html[data-theme="light"] .theme-toggle {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(15, 23, 42, 0.7);
+}
+html[data-theme="light"] .theme-toggle:hover {
+  border-color: #92701a;
+  color: #92701a;
+}
+
+/* ── Page body backgrounds ── */
+html[data-theme="light"] body.home,
+html[data-theme="light"] body.services,
+html[data-theme="light"] body.about,
+html[data-theme="light"] body.thankyou {
+  background: #f4f6f8;
+}
+html[data-theme="light"] body.inquiry {
+  background:
+    radial-gradient(ellipse at 95% 50%, rgba(201, 168, 76, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 45%, rgba(146, 112, 26, 0.15) 0%, transparent 45%),
+    linear-gradient(105deg, #f8f4ec 0%, #faf5e4 50%, #f5f0da 100%);
+  background-attachment: fixed;
+}
+html[data-theme="light"] body.contact {
+  background:
+    radial-gradient(ellipse at 95% 50%, rgba(0, 150, 140, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 45%, rgba(0, 100, 95, 0.08) 0%, transparent 45%),
+    linear-gradient(105deg, #f0f7f7 0%, #e8f4f3 50%, #e0f0ef 100%);
+  background-attachment: fixed;
+}
+html[data-theme="light"] body.inquiry label,
+html[data-theme="light"] body.inquiry .hint {
+  color: rgba(80, 55, 10, 0.85);
+}
+
+/* ── Hero (home page) ── */
+html[data-theme="light"] .hero-bg::before {
+  background: rgba(15, 23, 42, 0.65);
+}
+
+/* ── Buttons ── */
+html[data-theme="light"] .main-btn2 {
+  color: #92701a;
+  border-color: rgba(146, 112, 26, 0.5);
+}
+html[data-theme="light"] .main-btn2:hover {
+  background: rgba(146, 112, 26, 0.08);
+  border-color: #92701a;
+}
+html[data-theme="light"] .main-btn3 {
+  color: #92701a;
+  border-bottom-color: #92701a;
+}
+html[data-theme="light"] .main-btn3:hover {
+  color: #92701a;
+  border-bottom-color: #92701a;
+}
+
+/* ── Section label ── */
+html[data-theme="light"] .section-label-line {
+  background: #c9a84c;
+}
+html[data-theme="light"] .section-label-text {
+  color: #92701a;
+}
+
+/* ── Footer ── */
+html[data-theme="light"] footer {
+  background: #1e293b;
+  color: rgba(255, 255, 255, 0.6);
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="light"] .footer-inner {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="light"] .footer-col h4 {
+  color: #f0d37e;
+}
+html[data-theme="light"] .footer-col ul li a {
+  color: rgba(255, 255, 255, 0.6);
+}
+html[data-theme="light"] .footer-col ul li a:hover,
+html[data-theme="light"] .footer-icons a:hover {
+  color: #f0d37e;
+}
+html[data-theme="light"] .footer-bottom {
+  color: rgba(255, 255, 255, 0.3);
+}
+html[data-theme="light"] .linkedin-link {
+  color: #7cb9f4;
+}
+html[data-theme="light"] .linkedin-link:hover {
+  color: #ffffff;
+}
+
+/* ── Cards (services page) ── */
+html[data-theme="light"] .card {
+  background: #ffffff;
+  border-color: rgba(146, 112, 26, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+html[data-theme="light"] .card:hover {
+  border-color: rgba(146, 112, 26, 0.55);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+html[data-theme="light"] .card h3 {
+  color: #1e293b;
+}
+html[data-theme="light"] .card p {
+  color: #475569;
+}
+
+/* ── Stats section ── */
+html[data-theme="light"] .stats-section {
+  background: #f4f6f8;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+html[data-theme="light"] .stats {
+  background: #ffffff;
+  border-color: rgba(146, 112, 26, 0.2);
+}
+html[data-theme="light"] .stats:hover {
+  border-color: rgba(146, 112, 26, 0.6);
+}
+html[data-theme="light"] .stats .counter {
+  color: #f0d37e;
+}
+html[data-theme="light"] .stats p {
+  color: #475569;
+}
+
+/* ── AI Platform section (home) ── */
+html[data-theme="light"] .ai-platform-text h2 {
+  color: #1e293b;
+}
+html[data-theme="light"] .ai-platform-text p {
+  color: #475569;
+}
+html[data-theme="light"] .ai-platform-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* ── About page ── */
+html[data-theme="light"] .about-mission {
+  background: #ffffff;
+}
+html[data-theme="light"] .about-mission-h2 {
+  color: #1e293b;
+}
+html[data-theme="light"] .about-mission-p {
+  color: #475569;
+}
+html[data-theme="light"] .about-stat-number {
+  color: #c9a84c;
+}
+html[data-theme="light"] .about-stat-label {
+  color: #64748b;
+}
+html[data-theme="light"] .about-mission-img-frame {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+html[data-theme="light"] .about-story {
+  background: #f4f6f8;
+}
+html[data-theme="light"] .about-story-h2 {
+  color: #1e293b;
+}
+html[data-theme="light"] .bento-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.07);
+}
+html[data-theme="light"] .bento-founding {
+  background: #f8f9fa;
+}
+html[data-theme="light"] .bento-expansion {
+  background: #1e293b;
+}
+html[data-theme="light"] .bento-card-h3 {
+  color: #1e293b;
+}
+html[data-theme="light"] .bento-card-p {
+  color: #475569;
+}
+html[data-theme="light"] .bento-expansion .bento-expansion-title,
+html[data-theme="light"] .bento-expansion .bento-expansion-desc {
+  color: #f1f5f9;
+}
+html[data-theme="light"] .bento-platform-title {
+  color: #1e293b;
+}
+html[data-theme="light"] .bento-platform-desc {
+  color: #475569;
+}
+html[data-theme="light"] .about-values {
+  background: #f4f6f8;
+}
+html[data-theme="light"] .value-card {
+  border-left-color: rgba(146, 112, 26, 0.25);
+}
+html[data-theme="light"] .value-card:hover {
+  border-left-color: #c9a84c;
+}
+html[data-theme="light"] .value-card-h3 {
+  color: #1e293b;
+}
+html[data-theme="light"] .value-card-p {
+  color: #475569;
+}
+html[data-theme="light"] .about-cta {
+  background: #1e293b;
+  border-top-color: rgba(255, 255, 255, 0.05);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+html[data-theme="light"] .about-md {
+  background: #f4f6f8;
+}
+html[data-theme="light"] .about-md-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+html[data-theme="light"] .about-md-h2 {
+  color: #1e293b;
+}
+html[data-theme="light"] .about-md-role {
+  color: #64748b;
+}
+html[data-theme="light"] .about-md-p {
+  color: #475569;
+}
+
+/* ── Services page ── */
+html[data-theme="light"] .services-hero {
+  background: #1e293b;
+}
+html[data-theme="light"] .services-hero-h1 {
+  color: #ffffff;
+}
+html[data-theme="light"] .services-hero-p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Contact page ── */
+html[data-theme="light"] .contact-hero {
+  background: transparent;
+}
+html[data-theme="light"] .contact-hero-h1 {
+  color: #1e293b;
+}
+html[data-theme="light"] .contact-hero-p {
+  color: #475569;
+}
+html[data-theme="light"] .contact-form-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+html[data-theme="light"] .contact-form-h2 {
+  color: #1e293b;
+}
+html[data-theme="light"] .contact-details-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+html[data-theme="light"] .contact-details-h3 {
+  color: #1e293b;
+}
+html[data-theme="light"] .contact-detail-item {
+  color: #475569;
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+html[data-theme="light"] .contact-detail-item:hover {
+  color: #92701a;
+  background: rgba(0, 0, 0, 0.03);
+}
+html[data-theme="light"] .contact-detail-icon {
+  background: rgba(146, 112, 26, 0.1);
+}
+html[data-theme="light"] .contact-detail-icon i {
+  color: #c9a84c;
+}
+html[data-theme="light"] .contact-label {
+  color: #64748b;
+}
+html[data-theme="light"] .contact-input {
+  background: #f8fafc;
+  color: #1e293b !important;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+html[data-theme="light"] .contact-input::-webkit-input-placeholder,
+html[data-theme="light"] .contact-textarea::-webkit-input-placeholder {
+  color: #64748b !important;
+}
+html[data-theme="light"] .contact-input::-moz-placeholder,
+html[data-theme="light"] .contact-textarea::-moz-placeholder {
+  color: #64748b !important;
+  opacity: 1;
+}
+html[data-theme="light"] .contact-input::placeholder,
+html[data-theme="light"] .contact-textarea::placeholder {
+  color: #64748b !important;
+}
+html[data-theme="light"] .contact-input:focus {
+  border-bottom-color: #c9a84c;
+  background: #ffffff;
+}
+html[data-theme="light"] .contact-select {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* ── Contact/Inquiry form inputs ── */
+html[data-theme="light"] input,
+html[data-theme="light"] textarea,
+html[data-theme="light"] select {
+  background: #f8fafc;
+  color: #1e293b;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+  color: #94a3b8;
+}
+html[data-theme="light"] input:focus,
+html[data-theme="light"] textarea:focus,
+html[data-theme="light"] select:focus {
+  border-color: #c9a84c;
+  background: #ffffff;
+}
+html[data-theme="light"] label {
+  color: #1e293b;
+}
+
+/* ── Sub-service pages (architecture, backend, etc.) ── */
+html[data-theme="light"] .page-hero,
+html[data-theme="light"] .sub-hero,
+html[data-theme="light"] .service-page-hero {
+  background: #1e293b;
+}
+html[data-theme="light"] .service-section,
+html[data-theme="light"] .content-section {
+  background: #ffffff;
+}
+html[data-theme="light"] .feature-card,
+html[data-theme="light"] .tech-card,
+html[data-theme="light"] .process-card,
+html[data-theme="light"] .info-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+html[data-theme="light"] .feature-card h3,
+html[data-theme="light"] .tech-card h3,
+html[data-theme="light"] .process-card h3,
+html[data-theme="light"] .info-card h3 {
+  color: #1e293b;
+}
+html[data-theme="light"] .feature-card p,
+html[data-theme="light"] .tech-card p,
+html[data-theme="light"] .process-card p,
+html[data-theme="light"] .info-card p {
+  color: #475569;
+}
+
+/* Scoped to sub-service page content (avoids clobbering hero text on dark overlays) */
+html[data-theme="light"] .container h1,
+html[data-theme="light"] .container h2,
+html[data-theme="light"] .container h3,
+html[data-theme="light"] .container h4 {
+  color: #1e293b;
+}
+html[data-theme="light"] .container p {
+  color: #475569;
+}
+/* Restore white text for the home-page hero (dark image overlay) */
+html[data-theme="light"] .hero-bg .container h1 {
+  color: #f1f5f9;
+}
+html[data-theme="light"] .hero-bg .container p {
+  color: #94a3b8;
+}
+html[data-theme="light"] .back-btn {
+  color: #92701a;
+  border-color: rgba(146, 112, 26, 0.3);
+}
+
+/* ── Terms & Privacy pages ── */
+html[data-theme="light"] .terms-hero,
+html[data-theme="light"] .privacy-hero {
+  background: #1e293b;
+}
+html[data-theme="light"] .terms-sec,
+html[data-theme="light"] .privacy-sec {
+  background: #ffffff;
+}
+html[data-theme="light"] .terms-sec-inner,
+html[data-theme="light"] .privacy-sec-inner {
+  background: #f8f9fa;
+}
+html[data-theme="light"] .terms-cta,
+html[data-theme="light"] .privacy-cta {
+  background: #1e293b;
+}
+
+/* ── Thank you page ── */
+html[data-theme="light"] .thankyou-section {
+  background: #f4f6f8;
+}
+html[data-theme="light"] .thankyou-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+html[data-theme="light"] .thankyou-title {
+  color: #1e293b;
+}
+html[data-theme="light"] .thankyou-text {
+  color: #475569;
 }

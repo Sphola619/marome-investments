@@ -4,8 +4,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+
+  // 1. Theme Toggle
+
+  const themeToggle = document.getElementById("theme-toggle");
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("marome-theme", theme);
+    const icon = themeToggle ? themeToggle.querySelector("i") : null;
+    if (icon) {
+      icon.className = theme === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    }
+  }
+
+  // Apply saved theme (fallback to dark)
+  applyTheme(localStorage.getItem("marome-theme") || "dark");
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+  }
+
   
-  // 1. Form Submission Handling
+  // 2. Form Submission Handling
   
   const inquiryForm = document.querySelector("form");
   const nameInput = document.getElementById("name");
