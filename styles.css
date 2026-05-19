@@ -2647,6 +2647,14 @@ main.contact-main {
   transform: scale(0.97);
 }
 
+.field-error {
+  display: block;
+  color: #e05555;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  min-height: 1em;
+}
+
 /* ── Info Cluster ── */
 .contact-info-cluster {
   display: flex;

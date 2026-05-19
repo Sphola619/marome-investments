@@ -48,15 +48,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+      // Clear previous errors
+      ['name-error', 'email-error', 'project-error'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '';
+      });
+
+      let hasError = false;
+
+      if (!name) {
+        const el = document.getElementById('name-error');
+        if (el) el.textContent = 'Please enter your name.';
+        hasError = true;
+      }
+
       if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
+        const el = document.getElementById('email-error');
+        if (el) el.textContent = 'Please enter a valid email address.';
+        hasError = true;
       }
 
       if (projectInput.value.trim().length < 50) {
-        alert("Please describe your project (min 50 chars).");
-        return;
+        const el = document.getElementById('project-error');
+        if (el) el.textContent = 'Please describe your project (minimum 50 characters).';
+        hasError = true;
       }
+
+      if (hasError) return;
 
       const payload = JSON.stringify({ name, email, project });
 

@@ -79,10 +79,12 @@
                 <div class="contact-field">
                   <label class="contact-label">Full Name</label>
                   <input id="name" class="contact-input" type="text" placeholder="John Doe" required>
+                  <span class="field-error" id="name-error"></span>
                 </div>
                 <div class="contact-field">
                   <label class="contact-label">Email Address</label>
                   <input id="email" class="contact-input" type="email" placeholder="john@example.com" required>
+                  <span class="field-error" id="email-error"></span>
                 </div>
               </div>
               <div class="contact-field">
@@ -97,6 +99,7 @@
               <div class="contact-field">
                 <label class="contact-label">Project Details</label>
                 <textarea id="project" class="contact-input contact-textarea" rows="4" placeholder="Tell us about your goals and timeline... (min 50 characters)"></textarea>
+                <span class="field-error" id="project-error"></span>
               </div>
               <button class="contact-submit-btn" type="submit" id="submitBtn">Submit Inquiry</button>
               <div id="btn-spinner" class="btn-spinner" hidden>
