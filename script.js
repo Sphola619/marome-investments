@@ -60,6 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const payload = JSON.stringify({ name, email, project });
 
+      const submitBtn = inquiryForm.querySelector(".mySubmit");
+      const spinner = document.getElementById("submit-spinner");
+      submitBtn.disabled = true;
+      spinner.hidden = false;
+
       try {
         const response = await fetch(
           "https://api.marome-investments.co.za/api/inquiry",
@@ -77,6 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.location.href = "thankyou.html";
       } catch (error) {
+        spinner.hidden = true;
+        submitBtn.disabled = false;
         console.error("Error submitting form:", error);
         alert("Something went wrong submitting your inquiry. Please try again.");
       }

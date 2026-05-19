@@ -805,6 +805,46 @@ body.inquiry input::placeholder {
   transform: translateY(-1px);
 }
 
+.mySubmit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Submission spinner overlay */
+.submit-spinner-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+}
+
+.submit-spinner-overlay p {
+  color: #F5D78E;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.submit-spinner {
+  width: 52px;
+  height: 52px;
+  border: 5px solid rgba(245, 215, 142, 0.25);
+  border-top-color: #C9A84C;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 
 /* 9. Animations */
 
