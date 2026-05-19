@@ -60,8 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const payload = JSON.stringify({ name, email, project });
 
-      const submitBtn = inquiryForm.querySelector("[type='submit']");
-      const spinner = document.getElementById("btn-spinner");
+      const submitBtn = document.getElementById('submitBtn');
+      const spinner = document.getElementById('btn-spinner');
+      submitBtn.disabled = true;
       submitBtn.style.display = 'none';
       spinner.hidden = false;
 
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (error) {
         spinner.hidden = true;
         submitBtn.style.display = '';
+        submitBtn.disabled = false;
         console.error("Error submitting form:", error);
         alert("Something went wrong submitting your inquiry. Please try again.");
       }
