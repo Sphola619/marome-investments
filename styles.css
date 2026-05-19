@@ -805,40 +805,26 @@ body.inquiry input::placeholder {
   transform: translateY(-1px);
 }
 
-.mySubmit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Submission spinner overlay */
-.submit-spinner-overlay {
-  position: fixed;
-  inset: 0;
+/* Inline button spinner */
+.btn-spinner {
+  margin-top: 1.2rem;
+  width: 100%;
+  padding: 13px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 9999;
+  background: linear-gradient(135deg, #C9A84C, #F5D78E);
+  border-radius: 8px;
+  min-height: 48px;
 }
 
-.submit-spinner-overlay p {
-  color: #F5D78E;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin: 0;
-}
-
-.submit-spinner {
-  width: 52px;
-  height: 52px;
-  border: 5px solid rgba(245, 215, 142, 0.25);
-  border-top-color: #C9A84C;
+.btn-spinner-ring {
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(13, 11, 30, 0.3);
+  border-top-color: #0d0b1e;
   border-radius: 50%;
-  animation: spin 0.75s linear infinite;
+  animation: spin 0.7s linear infinite;
 }
 
 @keyframes spin {

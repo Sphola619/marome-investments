@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const payload = JSON.stringify({ name, email, project });
 
       const submitBtn = inquiryForm.querySelector(".mySubmit");
-      const spinner = document.getElementById("submit-spinner");
-      submitBtn.disabled = true;
+      const spinner = document.getElementById("btn-spinner");
+      submitBtn.hidden = true;
       spinner.hidden = false;
 
       try {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "thankyou.html";
       } catch (error) {
         spinner.hidden = true;
-        submitBtn.disabled = false;
+        submitBtn.hidden = false;
         console.error("Error submitting form:", error);
         alert("Something went wrong submitting your inquiry. Please try again.");
       }
