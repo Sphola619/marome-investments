@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const payload = JSON.stringify({ name, email, project });
 
-      const submitBtn = inquiryForm.querySelector(".mySubmit");
+      const submitBtn = inquiryForm.querySelector("[type='submit']");
       const spinner = document.getElementById("btn-spinner");
       submitBtn.hidden = true;
       spinner.hidden = false;
