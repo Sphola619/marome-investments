@@ -806,6 +806,8 @@ body.inquiry input::placeholder {
 }
 
 /* Inline button spinner */
+.btn-spinner[hidden] { display: none !important; }
+
 .btn-spinner {
   display: inline-flex;
   align-items: center;
