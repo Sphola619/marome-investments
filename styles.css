@@ -1584,7 +1584,6 @@ main.about-main {
   height: 12rem;
   object-fit: cover;
   border-radius: 4px;
-  filter: grayscale(1) brightness(0.75);
   margin-top: 2rem;
   flex-shrink: 0;
 }
